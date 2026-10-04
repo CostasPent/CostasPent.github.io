@@ -1,0 +1,19 @@
+title: Kostas Pentarakis
+description: Computer science student at NKUA working toward a career in penetration testing. Lab writeups, projects and notes.
+url: "https://costaspent.github.io"
+baseurl: ""
+markdown: kramdown
+highlighter: rouge
+permalink: /writeups/:year/:month/:title/
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - _templates
+  - vendor
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post

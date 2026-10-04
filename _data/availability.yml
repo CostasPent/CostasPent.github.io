@@ -1,0 +1,4 @@
+# Practical info for recruiters. Empty values are not shown; the line disappears if all are empty.
+location: ""
+available: ""      # e.g. "June - September 2027"
+work_mode: ""      # e.g. "on-site / hybrid / remote"

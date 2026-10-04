@@ -1,0 +1,97 @@
+---
+layout: default
+title: Home
+---
+<section class="hero">
+  <h1><span class="acc">&gt;</span> <span id="typed" data-text="Kostas Pentarakis">Kostas Pentarakis</span><span class="cursor">_</span></h1>
+  <p class="tag-line">I'm a computer science student in Athens, and I want to become a penetration tester.</p>
+  <p class="goal mono muted">$ echo $GOAL<br>Looking for a summer 2027 internship in penetration testing</p>
+  <div class="links mono">
+    <a href="https://github.com/CostasPent">github</a>
+    <a href="https://www.linkedin.com/in/konstantinos-pentarakis-306286332/">linkedin</a>
+    <a href="mailto:kostas.pent1@gmail.com">email</a>
+    <a href="{{ '/assets/KostasPentarakis_Resume.pdf' | relative_url }}">resume.pdf</a>
+  </div>
+  {% assign any_profile = false %}
+  {% for p in site.data.profiles %}{% assign hh = p.handle | default: "" %}{% assign uu = p.url | default: "" %}{% if hh != "" %}{% assign any_profile = true %}{% endif %}{% if uu != "" %}{% assign any_profile = true %}{% endif %}{% endfor %}
+  {% if any_profile %}
+  <div class="profiles mono">
+    <p class="prompt">$ ls profiles</p>
+    <div class="links">
+      {% for p in site.data.profiles %}
+        {% assign h = p.handle | default: "" | remove: "@" %}
+        {% assign u = p.url | default: "" %}
+        {% if h != "" %}{% capture label %}{{ p.short }}://{{ h }}{% endcapture %}{% elsif u != "" %}{% assign label = p.short %}{% else %}{% assign label = "" %}{% endif %}
+        {% if label != "" %}{% if u != "" %}<a href="{{ u }}">{{ label }}</a>{% else %}<span class="muted">{{ label }}</span>{% endif %}{% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+  {% assign av = site.data.availability %}
+  {% assign av_loc = av.location | default: "" %}{% assign av_when = av.available | default: "" %}{% assign av_mode = av.work_mode | default: "" %}
+  {% if av_loc != "" or av_when != "" or av_mode != "" %}
+  <p class="avail mono muted">{% if av_loc != "" %}<span>location: {{ av_loc }}</span>{% endif %}{% if av_when != "" %}<span>available: {{ av_when }}</span>{% endif %}{% if av_mode != "" %}<span>mode: {{ av_mode }}</span>{% endif %}</p>
+  {% endif %}
+</section>
+
+<h2>man kostas</h2>
+<div class="term mono">
+  <p class="h">NAME</p>
+  <p>kostas - computer science student learning to hack, legally</p>
+  <p class="h">SYNOPSIS</p>
+  <p>kostas [--web] [--network] [--htb] [--ctf] [--report]</p>
+  <p class="h">DESCRIPTION</p>
+  <p>I study at the Department of Informatics and Telecommunications at NKUA. I learn security by breaking practice systems that are built to be broken, then writing down what I found, why it worked and how to fix it.</p>
+  <p class="h">CURRENTLY</p>
+  <ul>
+    <li>Web security labs on PortSwigger, using Burp Suite</li>
+    <li>Hack The Box machines, starting with the easy ones</li>
+    <li>CryptoHack, mostly the crypto that shows up on the web (JWT, TLS, AES basics)</li>
+    <li>Networking basics: TCP/IP, DNS, HTTP, TLS</li>
+  </ul>
+  <p class="h">ALSO</p>
+  <p>I've also worked as a teaching assistant for Data Structures and Algorithms and for Introduction to Programming.</p>
+  <p class="h">SEE ALSO</p>
+  <p><a href="{{ '/writeups/' | relative_url }}">writeups</a>, <a href="{{ '/experience/' | relative_url }}">experience</a>, <a href="{{ '/education/' | relative_url }}">education</a></p>
+</div>
+
+{% assign sk = site.data.skills %}
+{% if sk.groups.size > 0 %}
+<h2>skills --list</h2>
+<div class="skills">
+  {% for g in sk.groups %}
+  <p class="grp mono">{{ '#' }} {{ g.name | downcase }}</p>
+  <ul class="chips">{% for i in g.items %}<li>{{ i }}</li>{% endfor %}</ul>
+  {% endfor %}
+  {% assign lang = sk.languages | default: "" %}
+  {% if lang != "" %}<p class="grp mono"># languages</p><p class="lang">{{ lang }}</p>{% endif %}
+</div>
+{% endif %}
+
+{% if site.data.stats.show %}
+<h2>./progress.sh</h2>
+<div class="stats mono">
+  <span>portswigger labs: {{ site.data.stats.portswigger_labs }}</span>
+  <span>htb machines: {{ site.data.stats.htb_machines }}</span>
+  <span>ctfs: {{ site.data.stats.ctfs_played }}</span>
+  <span>writeups: {{ site.posts | size }}</span>
+</div>
+{% endif %}
+
+{% assign pinned = site.posts | where: "pinned", true %}
+{% if pinned.size > 0 %}
+<h2>ls writeups/featured</h2>
+<ul class="list">
+  {% for post in pinned %}{% include post-row.html post=post %}{% endfor %}
+</ul>
+{% endif %}
+
+<h2>ls -t writeups | head -3</h2>
+{% if site.posts.size > 0 %}
+<ul class="list">
+  {% for post in site.posts limit:3 %}{% include post-row.html post=post %}{% endfor %}
+</ul>
+<p class="mono"><a href="{{ '/writeups/' | relative_url }}">all writeups</a></p>
+{% else %}
+<p class="empty mono">Nothing here yet. My first writeups are coming soon.</p>
+{% endif %}

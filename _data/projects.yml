@@ -1,0 +1,12 @@
+# No projects yet, so the /projects page is not part of the site.
+# When you have one:
+#   1. add an entry below (delete the [] line)
+#   2. move _templates/projects.html to the repo root
+# The /projects link in the menu then appears automatically.
+#
+# - name: my-tool
+#   year: 2026
+#   desc: One or two sentences on what it does.
+#   url: https://github.com/CostasPent/my-tool
+#   tags: [python, web]
+[]

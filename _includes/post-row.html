@@ -1,0 +1,9 @@
+<li>
+  <span class="d mono">{{ include.post.date | date: "%Y-%m-%d" }}</span>
+  <span>
+    <a href="{{ include.post.url | relative_url }}">{{ include.post.title }}</a>{% if include.post.pinned %} <span class="pin mono">pinned</span>{% endif %}<br>
+    <span class="tag mono">{{ include.post.platform }}{% if include.post.difficulty %} / {{ include.post.difficulty }}{% endif %}{% if include.post.severity %} / {{ include.post.severity }}{% endif %}</span>
+    {% for t in include.post.tags %}<span class="tag mono">#{{ t }}</span>{% endfor %}
+    {% if include.post.summary %}<span class="sum">{{ include.post.summary }}</span>{% endif %}
+  </span>
+</li>

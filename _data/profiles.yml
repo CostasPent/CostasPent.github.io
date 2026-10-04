@@ -1,0 +1,19 @@
+# Verifiable profiles, shown on the home page as  short://handle  under "$ ls profiles".
+# An entry stays hidden until it has a handle or a url. With a url it becomes a link.
+# "short" is the word before :// (keep it lowercase, no spaces).
+- name: Hack The Box
+  short: htb
+  handle: "CostasPent"
+  url: "https://profile.hackthebox.com/profile/019edfed-d358-7253-9792-d00100e89eaf"
+- name: PortSwigger
+  short: portswigger
+  handle: ""
+  url: ""
+- name: CryptoHack
+  short: cryptohack
+  handle: ""
+  url: ""
+- name: TryHackMe
+  short: tryhackme
+  handle: ""
+  url: ""

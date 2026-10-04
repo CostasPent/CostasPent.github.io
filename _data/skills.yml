@@ -1,0 +1,22 @@
+# Keep this honest: interviewers ask about everything listed here.
+# Move an item from "Learning now" to "Solid foundations" only when you could explain it in an interview.
+# Add tools only after you have really used them (Metasploit, Python scripting, Active Directory, ...).
+groups:
+  - name: Solid foundations
+    items:
+      - "Programming fundamentals: data structures and algorithms"
+      - "Wireshark and packet analysis (Ethernet, ARP, TLS handshake)"
+      - "Git and GitHub"
+      - "Explaining technical topics (teaching assistant)"
+  - name: Learning now
+    items:
+      - "Burp Suite"
+      - "Web vulnerabilities: SQL injection, XSS, authentication, access control"
+      - "PortSwigger Web Security Academy labs"
+      - "Hack The Box machines"
+      - "Kali Linux and nmap"
+      - "Linux command line and privilege escalation basics"
+      - "Networking: TCP/IP, DNS, HTTP, TLS"
+      - "Writing clear security writeups and reports"
+# Shown only when filled, e.g. "Greek (native), English (your level)"
+languages: ""

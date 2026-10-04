@@ -1,0 +1,5 @@
+# Set show: true when the numbers are worth showing on the home page.
+show: false
+portswigger_labs: 0
+htb_machines: 0
+ctfs_played: 0

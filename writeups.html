@@ -1,0 +1,18 @@
+---
+layout: default
+title: Writeups
+description: Writeups of PortSwigger labs, retired Hack The Box machines and CTF challenges.
+permalink: /writeups/
+---
+<h1>ls writeups/</h1>
+<p class="muted">My notes from labs, retired machines and finished CTFs: what I tried, what worked, what did not, and how the bug would be fixed.</p>
+{% if site.posts.size > 0 %}
+{% assign pinned = site.posts | where: "pinned", true %}
+{% assign rest = site.posts | where_exp: "p", "p.pinned != true" %}
+<ul class="list">
+  {% for post in pinned %}{% include post-row.html post=post %}{% endfor %}
+  {% for post in rest %}{% include post-row.html post=post %}{% endfor %}
+</ul>
+{% else %}
+<p class="empty mono">Nothing here yet. My first writeups are coming soon.</p>
+{% endif %}

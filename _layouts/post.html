@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<article class="post">
+  <p class="mono muted"><a href="{{ '/writeups/' | relative_url }}">&lt; cd ..</a></p>
+  <h1>{{ page.title }}</h1>
+  <p class="meta mono muted">
+    {{ page.date | date: "%Y-%m-%d" }}{% if page.platform %} | {{ page.platform }}{% endif %}{% if page.difficulty %} | {{ page.difficulty }}{% endif %}{% if page.severity %} | severity: {{ page.severity }}{% endif %}
+    {% for t in page.tags %}<span class="tag">#{{ t }}</span> {% endfor %}
+  </p>
+  {% if page.summary %}<p class="lead">{{ page.summary }}</p>{% endif %}
+  {{ content }}
+</article>

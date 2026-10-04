@@ -1,0 +1,14 @@
+---
+layout: default
+title: Projects
+description: Projects and tools by Kostas Pentarakis.
+permalink: /projects/
+---
+<h1>ls projects/</h1>
+{% for p in site.data.projects %}
+<div class="card">
+  <h3><a href="{{ p.url }}">{{ p.name }}</a></h3>
+  <p class="when mono">{{ p.year }}{% for t in p.tags %} <span class="tag">#{{ t }}</span>{% endfor %}</p>
+  <p>{{ p.desc }}</p>
+</div>
+{% endfor %}
