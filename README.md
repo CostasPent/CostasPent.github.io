@@ -1,4 +1,4 @@
-# Kostas Pentarakis | Security portfolio
+# Costas Pentarakis | Security portfolio
 
 Live site: **https://costaspent.github.io**
 
