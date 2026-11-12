@@ -13,7 +13,7 @@
 </head>
 <body>
   <header class="bar">
-    <a class="brand mono" href="{{ '/' | relative_url }}">kostas@sec:~$</a>
+    <a class="brand mono" href="{{ '/' | relative_url }}">costas@sec:~$</a>
     <nav class="mono" aria-label="Main">
       <a href="{{ '/writeups/' | relative_url }}"{% if page.url contains '/writeups' %} class="on"{% endif %}>/writeups</a>
       {% if site.data.projects.size > 0 %}<a href="{{ '/projects/' | relative_url }}"{% if page.url contains '/projects' %} class="on"{% endif %}>/projects</a>{% endif %}
@@ -26,7 +26,7 @@
     {{ content }}
   </main>
   <footer class="wrap mono">
-    <p>&copy; {{ 'now' | date: '%Y' }} Kostas Pentarakis. Everything here comes from legal practice environments: training labs, retired machines and finished CTFs. No real targets, no flags.</p>
+    <p>&copy; {{ 'now' | date: '%Y' }} Costas Pentarakis. Everything here comes from legal practice environments: training labs, retired machines and finished CTFs. No real targets, no flags.</p>
   </footer>
   <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
 </body>
