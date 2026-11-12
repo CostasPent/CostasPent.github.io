@@ -10,7 +10,6 @@ title: Home
     <a href="https://github.com/CostasPent">github</a>
     <a href="https://www.linkedin.com/in/konstantinos-pentarakis-306286332/">linkedin</a>
     <a href="mailto:costaspentarakis@gmail.com">email</a>
-    <a href="{{ '/assets/costasPentarakis_Resume.pdf' | relative_url }}">resume.pdf</a>
   </div>
   {% assign any_profile = false %}
   {% for p in site.data.profiles %}{% assign hh = p.handle | default: "" %}{% assign uu = p.url | default: "" %}{% if hh != "" %}{% assign any_profile = true %}{% endif %}{% if uu != "" %}{% assign any_profile = true %}{% endif %}{% endfor %}
